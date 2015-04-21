@@ -8,6 +8,12 @@ class WordrotateTest < Minitest::Test
     @wordrotate = Wordrotate.new
   end
 
+  def test_it_returns_false_to_strings_with_different_lenghths
+    assert_equal false, wordrotate.check("ab", "abc")
+    assert_equal false, wordrotate.check("abc", "aboi")
+    assert_equal false, wordrotate.check("babc", "fkgjey")
+  end
+
   def test_it_can_rotate_2_letters_and_check_equality
     assert_equal true, wordrotate.check("ap", "ap")
     assert_equal true, wordrotate.check("ap", "pa")
