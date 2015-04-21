@@ -4,7 +4,6 @@ require_relative 'word_rotation'
 
 class WordrotateTest < Minitest::Test
   attr_reader :wordrotate
-
   def setup
     @wordrotate = Wordrotate.new
   end
@@ -25,8 +24,7 @@ class WordrotateTest < Minitest::Test
     assert_equal true, wordrotate.check("apple", "apple")
     assert_equal true, wordrotate.check("apple", "pplea")
     assert_equal true, wordrotate.check("pleap", "apple")
-    # assert_equal false, wordrotate.check("paple", "apple")
-    # assert_equal false, wordrotate.check("elppa", "apple")
+    assert_equal false, wordrotate.check("paple", "apple")
+    assert_equal false, wordrotate.check("elppa", "apple")
   end
-
 end
